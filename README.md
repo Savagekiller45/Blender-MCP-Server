@@ -154,7 +154,7 @@ The addon automatically installs these dependencies:
 - Pydantic
 - docstring-parser
 - NumPy
-- PolyMCP toolkit (included)
+- PolyMCP
 
 **Blender Version**: 3.0.0 or higher
 
@@ -178,7 +178,7 @@ The addon automatically installs these dependencies:
 
 ## 🤝 Contributing
 
-Contributions are welcome! This project demonstrates how simple it is to create powerful MCP servers with PolyMCP.
+Contributions are welcome! This project demonstrates how simple it is to create powerful MCP servers for PolyMCP.
 
 ## 📝 License
 
@@ -186,7 +186,7 @@ MIT License - See LICENSE file for details
 
 ## 🔗 Related Projects
 
-- **[PolyMCP](https://github.com/llm-use/Polymcp)** - Universal MCP Agent & Toolkit for Intelligent Tool Orchestration
+- **[PolyMCP](https://github.com/llm-use/Polymcp)** -  Simple and efficient way to interact with MCP servers using custom agents
 - **[Model Context Protocol](https://modelcontextprotocol.io/)** - Open protocol for tool integration with LLMs
 
 ## 💡 Why This Project?
@@ -201,6 +201,6 @@ No complex prompting, no manual tool selection, no state management - PolyMCP ha
 
 ---
 
-**Built with ❤️ using [PolyMCP](https://github.com/llm-use/Polymcp)**
+**Designed for [PolyMCP](https://github.com/llm-use/Polymcp)**
 
 *Star ⭐ this repo if you find it useful!*
