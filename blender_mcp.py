@@ -54,7 +54,7 @@ class Config:
     MAX_QUEUE_SIZE = 1000
     THREAD_SAFE_OPERATIONS = True
     AUTO_INSTALL_PACKAGES = True
-    POLYMCP_PATH = r'C:\Users\vincenzo\Desktop\polymcp\polymcp'
+    POLYMCP_PATH = r'your_path'
     ENABLE_CACHING = True
     CACHE_SIZE = 256
 
@@ -5601,4 +5601,5 @@ def unregister():
     logger.info("MCP Server addon unregistered")
 
 if __name__ == "__main__":
+
     register()
