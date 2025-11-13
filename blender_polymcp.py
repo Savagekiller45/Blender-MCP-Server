@@ -6,7 +6,7 @@ from pathlib import Path
 from polymcp.polyagent import UnifiedPolyAgent, OllamaProvider
 
 async def main():
-    llm = OllamaProvider(model="gpt-oss:20b", temperature=0.1)
+    llm = OllamaProvider(model="gpt-oss:120b", temperature=0.1)
     
     # Invece di stdio, usiamo HTTP endpoint
     mcp_servers = ["http://localhost:8000/mcp"]
@@ -32,4 +32,5 @@ async def main():
             print(f"\n🤖 Blender: {result}")
 
 if __name__ == "__main__":
+
     asyncio.run(main())
